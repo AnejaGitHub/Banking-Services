@@ -1,0 +1,67 @@
+<!-- module.exports = router; -->
+<%- include('partials/header') %>
+
+<div class="">
+  <div class="container">
+    <!-- <i class="fas fa-key fa-6x"></i> -->
+    <div class="container jumbotron" style="background-color: #f8f7f2; box-shadow: 3px 3px #e6e3d9">
+      <h1 class="display-3 text-center">Welcome <%=accountUser.name%></h1>
+      <hr>
+      <hr>
+      <h3 class="display-6">email: <%=accountUser.email%></h3>
+      <h3 class="display-6">Address: <%=accountUser.address%></h3>
+      <h3 class="display-6">Current Balance: <%=accountUser.balance%></h3>
+    </div>
+    
+    
+    <hr>
+    <a class="btn btn-light btn-lg" href="/withdraw" role="button">Withdraw</a>
+    <a class="btn btn-light btn-lg" href="/deposit" role="button">deposit</a>
+    <a class="btn btn-light btn-lg" href="/transfer" role="button">Transfer</a>
+    <a class="btn btn-dark btn-lg" href="/logout" role="button">Log Out</a>
+    <hr>
+
+    <h3 class="display-6">Transactions</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">time</th>
+          <th scope="col">Trasaction with</th>
+          <th scope="col">Amount</th>
+          <!-- <th scope="col">Action</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        
+        <%  accountUser.transections.reverse().forEach(function(transection){ %>
+        <tr <% if(transection.action === 'credit' ) { %>
+          Style = "color: #27d327"
+      <% } else { %>
+          Style = "color : #f55050"
+      <% } %> >
+            <td><%=transection.date.getDate()%>/<%=transection.date.getMonth()%>/<%=Number(1900) + Number(transection.date.getYear())%></td>
+            <td><%=transection.date.getHours()%>:<%=transection.date.getMinutes()%>:<%=transection.date.getMilliseconds()%></td>
+            <td><%=transection.transferWith%></td>
+            <td><%=transection.amount%></td>
+            <!-- <td><%=transection.action%></td> -->
+        
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    
+      
+  
+  
+
+    <p class="secret-text"></p>
+    
+
+    <hr>
+    <!-- <a class="btn btn-dark btn-lg" href="/submit" role="button">Submit a Secret</a> -->
+  </div>
+  
+</div>
+
+<%- include('partials/footer') %>

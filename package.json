@@ -1,0 +1,21 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alert": "^5.1.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4",
+    "nodemon": "^2.0.19",
+    "popups": "^1.1.3"
+  }
+}
