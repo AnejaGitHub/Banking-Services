@@ -26,7 +26,7 @@
       <thead>
         <tr>
           <th scope="col">Date</th>
-          <th scope="col">time</th>
+          <th scope="col">Time</th>
           <th scope="col">Trasaction with</th>
           <th scope="col">Amount</th>
           <!-- <th scope="col">Action</th> -->
@@ -36,9 +36,9 @@
         
         <%  accountUser.transections.reverse().forEach(function(transection){ %>
         <tr <% if(transection.action === 'credit' ) { %>
-          Style = "color: #27d327"
+          Style = "color: #009600; font-weight: bold; " 
       <% } else { %>
-          Style = "color : #f55050"
+          Style = "color :#e3652a ; font-weight: bold;"
       <% } %> >
             <td><%=transection.date.getDate()%>/<%=transection.date.getMonth()%>/<%=Number(1900) + Number(transection.date.getYear())%></td>
             <td><%=transection.date.getHours()%>:<%=transection.date.getMinutes()%>:<%=transection.date.getMilliseconds()%></td>

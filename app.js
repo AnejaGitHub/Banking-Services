@@ -162,7 +162,7 @@ app.post("/withdraw", function(req,res) {
                                 });
                                 User.updateOne({email: email}, {$push: {transections: {
                                     date:curdate,
-                                    transferWith: "Self",
+                                    transferWith: "Cash Withdraw",
                                     amount:amount,
                                     action: "debit"
                                 } }}, function(e, r) {
@@ -223,7 +223,7 @@ app.post("/deposit", function(req,res) {
                             });
                             User.updateOne({email: email}, {$push: {transections: {
                                 date:curdate,
-                                transferWith: "Self",
+                                transferWith: "Cash Deposit",
                                 amount:amount,
                                 action: "credit"
                             } }}, function(e, r) {
